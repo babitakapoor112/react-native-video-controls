@@ -206,7 +206,12 @@ export default class VideoPlayer extends Component {
       this.props.onLoad(...arguments);
     }
   }
-
+  /**to hide the loader for customization**/
+  _removeLoader = () => {
+    let state = this.state;
+    state.loading = false;
+    this.setState(state);
+  }
   /**
    * For onprogress we fire listeners that
    * update our seekbar and timer.
